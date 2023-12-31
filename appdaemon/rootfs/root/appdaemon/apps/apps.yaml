@@ -12,6 +12,9 @@ pred_bat:
   # Timezone to work in
   timezone: Europe/London
 
+  # XXX: This is a configuration template, delete this line once you edit your configuration
+  template: True
+
   # Set to auto-match with a GivEnergy serial number, but you can override the serial or the sensor names
   # if it doesn't work or if you have more than one inverter you will need to list both
   geserial: 're:sensor.givtcp_(.+)_soc_kwh'
@@ -124,7 +127,8 @@ pred_bat:
   # Inverter max AC limit (one per inverter). E.g for a 3.6kw inverter set to 3600
   # If you have a second inverter for PV only please add the two values together
   inverter_limit:
-   - 3600
+   - 7500
+   - 7500
 
   # Export limit is a software limit set on your inverter that prevents exporting above a given level
   # When enabled Predbat will model this limit
@@ -134,8 +138,8 @@ pred_bat:
 
   # Some inverters don't turn off when the rate is set to 0, still charge or discharge at around 200w
   # The value can be set here in watts to model this (doesn't change operation)
-  inverter_battery_rate_min:
-    - 200
+  #inverter_battery_rate_min:
+  #  - 200
 
   # Workaround to limit the maximum reserve setting, some inverters won't allow 100% to be set
   # Comment out if your inverter allows 100%
@@ -145,17 +149,17 @@ pred_bat:
   # enter the charging curve here as a % of the max charge rate for each soc percentage.
   # the default is 1.0 (full power)
   # The example below is from GE 9.5kwh battery with latest firmware and gen1 inverter
-  battery_charge_power_curve:
-    91 : 0.91
-    92 : 0.81
-    93 : 0.71
-    94 : 0.62
-    95 : 0.52
-    96 : 0.43
-    97 : 0.33
-    98 : 0.24
-    99 : 0.24
-    100 : 0.24
+  #battery_charge_power_curve:
+  #  91 : 0.91
+  #  92 : 0.81
+  #  93 : 0.71
+  #  94 : 0.62
+  #  95 : 0.52
+  #  96 : 0.43
+  #  97 : 0.33
+  #  98 : 0.24
+  #  99 : 0.24
+  #  100 : 0.24
 
   # Inverter clock skew in minutes, e.g. 1 means it's 1 minute fast and -1 is 1 minute slow
   # Separate start and end options are applied to the start and end time windows, mostly as you want to start late (not early) and finish early (not late)
@@ -229,12 +233,12 @@ pred_bat:
   # If you have Intelligent Octopus the battery size and limit will be extracted from the Octopus Energy plugin directly.
   # Set the car SOC% if you have it to give an accurate forecast of the cars battery levels.
   # One entry per car if you have multiple cars.
-  car_charging_battery_size:
-    - 75
-  car_charging_limit:
-    - 're:number.tsunami_charge_limit'
-  car_charging_soc:
-    - 're:sensor.tsunami_battery'
+  #car_charging_battery_size:
+  #  - 75
+  #car_charging_limit:
+  #  - 're:number.tsunami_charge_limit'
+  #car_charging_soc:
+  #  - 're:sensor.tsunami_battery'
 
   # If you have Octopus intelligent, enable the intelligent slot information to add to pricing
   # Will automatically disable if not found, or comment out to disable fully
@@ -317,8 +321,6 @@ pred_bat:
   # if you have more history you could use 7 and 14 (in a list) but the standard data in HA only lasts 10 days
   days_previous:
     - 7
-    - 14
-    - 21
 
   # Days previous weight can be used to control the weighting of the previous load points, the values are multiplied by their
   # weights and then divided through by the total weight. E.g. if you used 1 and 0.5 then the first value would have 2/3rd of the weight and the second 1/3rd
@@ -360,13 +362,13 @@ pred_bat:
   #iboost_energy_today: 'sensor.xxxxx'
   #iboost_energy_scaling: 1.0
   # Gas rates for comparison
-  metric_octopus_gas: 're:(sensor.(octopus_energy_|)gas_[0-9a-z]+_[0-9a-z]+_current_rate)'
+  #metric_octopus_gas: 're:(sensor.(octopus_energy_|)gas_[0-9a-z]+_[0-9a-z]+_current_rate)'
 
   # Nordpool market energy rates
-  futurerate_url: 'https://www.nordpoolgroup.com/api/marketdata/page/325?currency=GBP'
-  futurerate_adjust_import: False
-  futurerate_adjust_export: True
-  futurerate_peak_start: "16:00:00"
-  futurerate_peak_end: "19:00:00"
-  futurerate_peak_premium_import: 14
-  futurerate_peak_premium_export: 6.5
+  #futurerate_url: 'https://www.nordpoolgroup.com/api/marketdata/page/325?currency=GBP'
+  #futurerate_adjust_import: False
+  #futurerate_adjust_export: True
+  #futurerate_peak_start: "16:00:00"
+  #futurerate_peak_end: "19:00:00"
+  #futurerate_peak_premium_import: 14
+  #futurerate_peak_premium_export: 6.5
