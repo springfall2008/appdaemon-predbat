@@ -15,5 +15,5 @@ api:
 hadashboard:
 logs:
   main_log: 
-    filename: /config/predbat.log
+    filename: predbat.log
     log_size: 10000000
