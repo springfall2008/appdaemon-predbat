@@ -8,6 +8,7 @@ appdaemon:
   plugins:
     HASS:
       type: hass
+  app_dir: /config/apps
 http:
   url: http://127.0.0.1:5050
 admin:
@@ -15,5 +16,5 @@ api:
 hadashboard:
 logs:
   main_log: 
-    filename: predbat.log
+    filename: /config/predbat.log
     log_size: 10000000
