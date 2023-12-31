@@ -5,7 +5,7 @@ slug: appdeamon-predbat
 description: Predbat pre-install in AppDaemon
 url: https://github.com/springfall2008/appdaemon-predbat
 codenotary: codenotary@frenck.dev
-webui: http://[HOST]:[PORT:5050]
+webui: http://[HOST]:[PORT:5051]
 arch:
   - aarch64
   - amd64
@@ -14,9 +14,9 @@ init: false
 homeassistant_api: true
 uart: true
 ports:
-  5050/tcp: 5050
+  5051/tcp: 5051
 ports_description:
-  5050/tcp: AppDaemon
+  5051/tcp: AppDaemon
 map:
   - addon_config:rw
   - homeassistant_config:rw
