@@ -10,7 +10,7 @@ appdaemon:
       type: hass
   app_dir: /config/apps
 http:
-  url: http://127.0.0.1:5050
+  url: http://127.0.0.1:5051
 admin:
 api:
 hadashboard:
