@@ -18,3 +18,9 @@ suitable for wall mounted tablets.
 * Once you have edited apps.yaml click 'restart' on the appdaemon-predbat add-on
 * Continue to set up Predbat as per the documentation
 
+## Migration from Predbat installed with AppDaemon
+
+* If you have a previous install of Predbat with AppDaemon then first
+  * Take a copy of your existing apps.yaml
+  * Either uninstall AppDaemon or delete the 'homeassistant/appdeamon/apps/batpred' directory from your system
+* After installing appdaemon-predbat then copy your saved apps.yaml over the template apps.yaml in '/addon_configs/46f69597_appdaemon-predbat'
