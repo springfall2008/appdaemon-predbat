@@ -20,6 +20,17 @@ if ! bashio::fs.file_exists '/config/appdaemon.yaml'; then
         || bashio::exit.nok 'Failed to create initial AppDaemon configuration'
 fi
 
+# Download initial Predbat
+if ! bashio::fs.file_exists '/config/apps/apps.yaml'; then
+    echo "Performing initial download"
+    if bashio::config.has_value 'initial_download'; then
+        for filename in $(bashio::config 'initial_download'); do
+            echo "Download $filename"
+            wget "$filename" -P "/config/apps"
+        done
+    fi
+fi
+
 # Install user configured/requested packages
 if bashio::config.has_value 'system_packages'; then
     apk update \
