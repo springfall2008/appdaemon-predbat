@@ -16,13 +16,13 @@ COPY rootfs/patches /patches
 RUN \
     apk add --no-cache --virtual .build-dependencies \
         build-base=0.5-r3 \
-        python3-dev=3.11.7 \
+        python3-dev=3.11.8-r0 \
     && echo "Step1"
 RUN \
     apk add --no-cache \
         py3-pip=23.3.1-r0 \
         py3-wheel=0.42.0-r0 \
-        python3=3.11.7 \
+        python3=3.11.8-r0 \
     && echo "Step2"
 RUN \
     pip install -r /tmp/requirements.txt \
