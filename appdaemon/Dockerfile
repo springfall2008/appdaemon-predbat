@@ -18,21 +18,27 @@ RUN \
         build-base=0.5-r3 \
         python3-dev=3.11.7 \
     \
+    && echo "Step1" \
     && apk add --no-cache \
         py3-pip=23.3.1-r0 \
         py3-wheel=0.42.0-r0 \
         python3=3.11.7 \
     \
+    && echo "Step2" \
     && pip install -r /tmp/requirements.txt \
     \
+    && echo "Step3" \
     && cd /usr/lib/python3.11/site-packages/ \
+    && echo "Step4" \
     && patch -p1 < /patches/force_recompile.patch \
     \
+    && echo "Step5" \
     && find /usr \
         \( -type d -a -name test -o -name tests -o -name '__pycache__' \) \
         -o \( -type f -a -name '*.pyc' -o -name '*.pyo' \) \
         -exec rm -rf '{}' + \
     \
+    && echo "Step6" \
     && apk del --no-cache --purge .build-dependencies
 
 # Copy root filesystem
