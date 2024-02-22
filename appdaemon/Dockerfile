@@ -29,7 +29,7 @@ RUN \
     && echo "Step3"
 RUN \
     cd /usr/lib/python3.11/site-packages/ \
-    patch -p1 < /patches/force_recompile.patch \
+    && patch -p1 < /patches/force_recompile.patch \
     && find /usr \
         \( -type d -a -name test -o -name tests -o -name '__pycache__' \) \
         -o \( -type f -a -name '*.pyc' -o -name '*.pyo' \) \
