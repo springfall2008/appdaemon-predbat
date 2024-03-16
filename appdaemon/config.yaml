@@ -27,7 +27,7 @@ options:
   system_packages: []
   python_packages: []
   init_commands: []
-  initial_download: ["https://raw.githubusercontent.com/springfall2008/batpred/v7.15.15/apps/predbat/predbat.py", "https://raw.githubusercontent.com/springfall2008/batpred/v7.15.15/apps/predbat/config/apps.yaml"]
+  initial_download: ["https://raw.githubusercontent.com/springfall2008/batpred/v7.16.7/apps/predbat/predbat.py", "https://raw.githubusercontent.com/springfall2008/batpred/v7.16.7/apps/predbat/config/apps.yaml"]
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   system_packages:
