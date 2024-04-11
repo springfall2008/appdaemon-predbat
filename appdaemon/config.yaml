@@ -1,6 +1,6 @@
 ---
 name: appdaemon-predbat
-version: 1.0.8
+version: 1.0.9
 slug: appdaemon-predbat
 description: Predbat pre-install in AppDaemon
 url: https://github.com/springfall2008/appdaemon-predbat
@@ -27,7 +27,7 @@ options:
   system_packages: []
   python_packages: []
   init_commands: []
-  initial_download: ["https://raw.githubusercontent.com/springfall2008/batpred/v7.16.7/apps/predbat/predbat.py", "https://raw.githubusercontent.com/springfall2008/batpred/v7.16.7/apps/predbat/config/apps.yaml"]
+  initial_download: ["https://raw.githubusercontent.com/springfall2008/batpred/v7.16.12/apps/predbat/predbat.py", "https://raw.githubusercontent.com/springfall2008/batpred/v7.16.12/apps/predbat/config/apps.yaml"]
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   system_packages:
