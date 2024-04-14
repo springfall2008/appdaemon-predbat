@@ -16,7 +16,7 @@ COPY rootfs/patches /patches
 RUN \
     apk add --no-cache --virtual .build-dependencies \
         build-base=0.5-r3 \
-        python3-dev=3.11.8-r0 \
+        python3-dev=3.12.3-r0 \
     && echo "Step1"
 RUN \
     apk add --no-cache \
